@@ -1,0 +1,1 @@
+def invertTree(self, root: TreeNode) -> TreeNode:

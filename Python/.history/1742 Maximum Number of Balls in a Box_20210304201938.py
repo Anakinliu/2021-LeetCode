@@ -1,0 +1,5 @@
+def countBalls(lowLimit, highLimit):
+    count = dict()
+    for n in range(lowLimit, highLimit+1):
+        n_str = str(n)
+        sum(map(int, list(n_str)))

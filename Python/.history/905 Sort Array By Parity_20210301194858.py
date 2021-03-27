@@ -1,0 +1,1 @@
+def sortArrayByParity(self, A: List[int])

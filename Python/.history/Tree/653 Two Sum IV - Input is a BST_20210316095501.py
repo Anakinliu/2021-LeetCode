@@ -1,0 +1,1 @@
+def findTarget(root: TreeNode, k: int) -> bool:

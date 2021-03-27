@@ -1,0 +1,1 @@
+def heightChecker(self, heights):

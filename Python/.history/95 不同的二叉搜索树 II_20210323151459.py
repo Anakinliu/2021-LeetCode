@@ -1,0 +1,1 @@
+def generateTrees(self, n: int)

@@ -1,0 +1,14 @@
+def numTrees(n):
+    if n <= 2:
+        return n
+    dp_table = [0] * (n+1)
+    dp_table[0] = 1
+    dp_table[1] = 1
+    dp_table[2] = 2
+    for i in range(3, n+1):
+        for j in range(0, i):
+            print(j, i-j-1)
+            dp_table[i] += dp_table[j] * dp_table[i-j-1]
+    return dp_table[n]
+
+print(numTrees(5))

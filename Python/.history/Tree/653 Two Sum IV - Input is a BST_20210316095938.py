@@ -1,0 +1,21 @@
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def findTarget(root, k):
+    lst = []
+    def toLst(root):
+        if root:
+            toLst(root.left)
+            lst.append(root.val)
+            toLst(root.right)
+    left = 0
+    right = len(lst) - 1
+    while left < right:
+        if lst[left] + lst[right] < k:
+            left += 1
+        if lst[left] + lst[right] > k:
+            right -= 1
+        if lst[left] + lst[right] > k:
