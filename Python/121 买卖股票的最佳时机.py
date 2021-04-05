@@ -24,7 +24,7 @@ def maxProfit2(prices):  # 遍历以便数组
 # 动态规划
 def maxProfit3(prices):
     n = len(prices)
-    if prices < 2:
+    if n < 2:
         return 0
     dp_table = [[0] * 2 for _ in range(n)]
 

@@ -17,7 +17,7 @@ def lengthOfLongestSubstring(s):
 # @motal
 def lengthOfLongestSubstring2(s):
     used = {}  # key为 s 中的字符，value为出现的位置
-    max_length = start = 0
+    max_length = start = 0  # start:无重复子串的起始索引
     for i, c in enumerate(s):
         # 出现重复的了
         if c in used and start <= used[c]:

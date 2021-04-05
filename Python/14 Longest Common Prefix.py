@@ -1,17 +1,18 @@
 # 最长公共前缀，时间O(N*M)
+# strs = ["flower","flow","flight"]
 def longestCommonPrefix(strs):
     if not strs:
         return ""
     s_len = len(strs)
     point = strs[0]  # 以第一个为标准
     for s in strs[1:]:
-        idx = 0
+        idx = 0  # # 开始查看一个字符串，初始化最长公共长度为0
         for a,b in zip(s, point):
             if a == b:
                 idx += 1
             else:
                 break
-        point = point[:idx]
+        point = point[:idx]  # 每走完一个字符串，更新最长公共长度
 
     return point
 
@@ -22,7 +23,7 @@ def longestCommonPrefix2(strs):
     """
     if not strs:
         return ""
-    shortest = min(strs,key=len)
+    shortest = min(strs,key=len)  # 先按照字符串长度升序排列
     for i, ch in enumerate(shortest):
         for other in strs:
             if other[i] != ch:
