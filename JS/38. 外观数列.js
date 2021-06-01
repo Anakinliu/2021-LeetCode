@@ -2,6 +2,7 @@
  * @param {number} n
  * @return {string}
  * 
+ n      res
  1.     1
  2.     11
  3.     21
@@ -14,13 +15,15 @@
 10.     13211311123113112211
  */
  var countAndSay = function(n) {
+     // 基本情况
     if (n == 1) {
         return '1';
     }
     if (n == 2) {
         return '11';
     }
-    let mm = 11 + '';
+
+    let mm = '11';
     let res = '';
     for (let i = 3; i <= n; i++) {
         let pre = mm[0];

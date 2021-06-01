@@ -1,9 +1,9 @@
 /**
- * 只包含括号！！！
- * @param {string} s
+ * 只包含括号的字符串，检查括号是否正确匹配
+ * @param {string} s，"([])("
  * @return {boolean}
  */
-var isValid = function (s) {
+var isValid1 = function (s) {
   const stack = [];
   const map = {
     "(": ")",
@@ -11,10 +11,10 @@ var isValid = function (s) {
     "{": "}",
   };
   for (let i = 0; i < s.length; i++) {
-    if (map(s[i])) {
-      stack.push(map(s[i]));
+    if (map[s[i]]) {
+      stack.push(map[s[i]]);
       continue;
-    } else if (stack.pop() !== map(s[i])) {
+    } else if (stack.pop() !== s[i]) {
       return false;
     }
   }
@@ -26,7 +26,7 @@ var isValid = function (s) {
  * @param {*} s
  * @returns
  */
-var isValid = function (s) {
+var isValid2 = function (s) {
   const stack = [];
   const map = {
     "(": ")",
@@ -46,8 +46,8 @@ var isValid = function (s) {
   return !stack.length;
 };
 
-console.log(isValid("([])("));
-console.log(isValid("(]"));
-console.log(isValid("([)]"));
-console.log(isValid("{[]}")); // TRUE
-console.log(isValid("([}}[[]{}"));
+console.log(isValid1("([])("));
+console.log(isValid1("(]"));
+console.log(isValid1("([)]"));
+console.log(isValid1("{[]}")); // TRUE
+console.log(isValid1("([}}[[]{}"));
