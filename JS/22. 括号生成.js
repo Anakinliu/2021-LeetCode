@@ -47,7 +47,4 @@ var generateParenthesis2 = function (n) {
     return res;
 };
 
-
-
-
 generateParenthesis2(2);
