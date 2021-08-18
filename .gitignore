@@ -1,2 +1,5 @@
 /.history
 /.vscode
+.github
+.husky
+node_modules
