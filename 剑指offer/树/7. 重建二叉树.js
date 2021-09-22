@@ -29,14 +29,15 @@ function build(preSeg, inSeg) {
         throw Error('输入有误');
     }
     if (preSeg.length === 1) {
-        // 叶子节点,不必找左右子树了
+        // 当前片段只有一个节点，那就是整个树的叶子节点,不必找左右子树了
         return new TreeNode(preSeg[0]);
-    }
+    } 
     if (preSeg.length === 0) {
         return null;
     }
+    // 前序遍历的第一个节点就是这个树的根节点
     let rootVal = preSeg[0];
-
+    // 找到根节点在中序遍历中的位置，此位置前面就是左子树
     let inorderEndIdx = inSeg.indexOf(rootVal);
     // 构造子树根节点
     let rootNode = new TreeNode(rootVal);
@@ -47,11 +48,13 @@ function build(preSeg, inSeg) {
         preSeg.slice(1, 1 + inorderEndIdx),
         inSeg.slice(0, inorderEndIdx)
     );
+
     // 传入右子树的先序遍历和中序遍历片段,返回的就是右孩子
     rootNode.right = build(
         preSeg.slice(1 + inorderEndIdx, preSeg.length),
         inSeg.slice(inorderEndIdx + 1, inSeg.length)
     );
+
     return rootNode;
 }
 
